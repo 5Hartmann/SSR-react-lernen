@@ -10,12 +10,12 @@ module.exports = {
         filename: 'index.js'
     },
     module: {
-        loaders: [
-            { test: /\.js$/, exclude: /node_modules/, loaders: 'babel' },
-            { test: /\.css$/, loader: "style-loader!css-loader" }
+        rules: [
+            {
+                test: /\.js$/,
+                use: 'babel-loader',
+                exclude: /node_modules/
+            }
         ]
-    },
-    resolve: {
-        extensions: ['', '.js', '.jsx', '.css']
     }
 }
